@@ -1,0 +1,38 @@
+GET http://localhost:3000/users?offset=11&limit=4
+###
+GET http://localhost:3000/users?role=admin
+###
+GET http://localhost:3000/users?role=author
+###
+GET http://localhost:3000/users?role=guest
+###
+GET http://localhost:3000/users/32
+
+
+
+###
+DELETE http://localhost:3000/users/20
+
+
+###
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+	"username": "test5",
+	"email": "test5555@test.cc",
+	"password": "test123",
+	"role": "admin"
+}
+
+
+###
+PUT http://localhost:3000/users/31
+Content-Type: application/json
+
+{
+	"username": "test88",
+	"email": "test88@test.cc",
+	"password": "test123",
+	"role": "admin"
+}
