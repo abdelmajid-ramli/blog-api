@@ -40,9 +40,9 @@ router.post("/", async function (req, res, next) {
 
 router.delete("/:id", async function (req, res, next) {
   if(await usersRepo.deleteUser(req.params.id)){
-    res.send("deleted");
+    res.send("user deleted");
   }else{
-    res.send("error while deleting");
+    res.send("error while deleting user");
   }
 });
 module.exports = router;

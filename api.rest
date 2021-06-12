@@ -7,13 +7,8 @@ GET http://localhost:3000/users?role=author
 GET http://localhost:3000/users?role=guest
 ###
 GET http://localhost:3000/users/32
-
-
-
 ###
 DELETE http://localhost:3000/users/20
-
-
 ###
 POST http://localhost:3000/users
 Content-Type: application/json
@@ -35,4 +30,88 @@ Content-Type: application/json
 	"email": "test88@test.cc",
 	"password": "test123",
 	"role": "admin"
+}
+
+///////      articles routes 
+###
+GET http://localhost:3000/articles?offset=11&limit=4
+###
+GET http://localhost:3000/articles/2
+###
+DELETE http://localhost:3000/articles/1
+###
+POST http://localhost:3000/articles
+Content-Type: application/json
+
+{
+	"title": "test article",
+	"content": "kjhsldkghlskdhgsldkgh",
+	"published": "true"
+}
+
+
+###
+PUT http://localhost:3000/articles/2
+Content-Type: application/json
+
+{
+	"title": "new title"
+}
+
+
+
+
+///////      comments routes 
+###
+GET http://localhost:3000/comments
+###
+GET http://localhost:3000/comments?articleid=2
+###
+GET http://localhost:3000/comments/2
+###
+DELETE http://localhost:3000/comments/1
+###
+POST http://localhost:3000/comments
+Content-Type: application/json
+
+{
+	"content": "new comment"
+}
+
+
+###
+PUT http://localhost:3000/comments/629
+Content-Type: application/json
+
+{
+	"content": "updated comment"
+}
+
+
+
+
+///////      tags routes 
+###
+GET http://localhost:3000/tags
+###
+GET http://localhost:3000/comments?articleid=2
+###
+GET http://localhost:3000/tags/2
+###
+DELETE http://localhost:3000/tags/1
+###
+POST http://localhost:3000/tags
+Content-Type: application/json
+
+{
+	"name": "tagtest"
+}
+
+
+###
+PUT http://localhost:3000/tags/11
+Content-Type: application/json
+
+{
+	"name": "updatedtag"
 }

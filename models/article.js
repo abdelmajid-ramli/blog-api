@@ -1,10 +1,9 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const { Model } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Article extends Model {
-    
+
     static associate(models) {
       Article.belongsTo(models.User)
       Article.hasMany(models.Comment)
@@ -17,7 +16,8 @@ module.exports = (sequelize, DataTypes) => {
       unique: true,
     },
     content: DataTypes.TEXT,
-    published: DataTypes.BOOLEAN
+    published: DataTypes.BOOLEAN,
+    UpdatedAt: DataTypes.DATE
   }, {
     sequelize,
     modelName: 'Article',

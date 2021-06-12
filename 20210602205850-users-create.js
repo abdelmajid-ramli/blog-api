@@ -14,11 +14,13 @@ for (let i = 0; i < 20; i++) {
   });
 }
 module.exports = {
+  /*
   up: async (queryInterface, Sequelize) => {
     await queryInterface.bulkInsert("users", users, {});
-  },
+  },*/
 
+  /*
   down: async (queryInterface, Sequelize) => {
     await queryInterface.bulkDelete("users", null, {});
-  },
+  },*/
 };

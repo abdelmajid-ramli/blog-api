@@ -20,7 +20,7 @@ module.exports = {
             role:"guest",
         }
     })  },
-    getUser(id){return User.findAll({
+    getUser(id){return User.findOne({
         where:{
             id:id,
         }
