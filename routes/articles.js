@@ -23,6 +23,7 @@ router.get("/", async function (req, res, next) {
   //res.send(article)
   //res.send( {article : await articlesRepo.getArticle(req.params.id), comments : await commentsRepo.getCommentsByArticle(req.params.id), user : await usersRepo.getUser(idd.UserId)})
   //res.send(await articlesRepo.getArticle(req.params.id));
+  //
 });*/
 
 router.get('/:id', async function(req, res, next) {
