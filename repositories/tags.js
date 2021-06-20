@@ -8,7 +8,7 @@ module.exports = {
             id:id,
         }
     })  },
-    getTagsByArticle(id){return Comment.findAll({
+    getTagsByArticle(id){return Tag.findAll({
         where:{
             ArticleId:id,
         }

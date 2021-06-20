@@ -25,6 +25,11 @@ module.exports = {
             id:id,
         }
     })  },
+    getUserByName(username){return User.findOne({
+        where:{
+            username:username,
+        }
+    })  },
     getUserByEmail(email) { },
     addUser(user) {
         return User.create(user);

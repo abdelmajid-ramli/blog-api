@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Ramli API</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+</head>
+<style>
+    .box {
+   display: flex;
+   align-items:center;
+}
+
+</style>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="height: 60px;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">RAMLI API</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item" style="margin-left: 20px;" >
+                <a class="nav_link" href="index.html">HOME</a>
+            </li>
+            <li class="nav-item" style="margin-left: 20px;"  >
+                <a class="nav_link" href="users.html">USERS</a>
+            </li>
+            <li class="nav-item" style="margin-left: 20px;" >
+                <a class="nav_link" href="AddArticles.html">ADD</a>
+            </li>
+            <li class="nav-item" style="margin-left: 20px;" >
+              <a class="nav_link" href="index4.html">ABOUT</a>
+            </li>
+          </ul>
+          <div id="login_home">
+                
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+</br></br>
+    <div class="container2" style="background-color :rgb(255, 255, 255); width:85%;margin:auto;">
+    
+    </div>
+</br></br>
+    
+</body>
+</html>
+
+<script>
+
+
+if(sessionStorage.getItem("userName")){
+  document.getElementById("login_home").innerHTML='<a href="" class="nav_link">'+sessionStorage.getItem("userName")+'</a>';
+}else{
+  document.getElementById("login_home").innerHTML='<a href="login.html" class="nav_link">LOGIN</a>';
+
+}
+
+
+async function getArticle() {
+var url_string = window.location.href;
+var url = new URL(url_string);
+var c = url.searchParams.get("id");
+
+
+let url2 = `http://localhost:3000/articles/${c}`;
+    try {
+        let res = await fetch(url2);
+        return await res.json();
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+async function renderArticle() {
+    let cmt = 1;
+    let data = await getArticle();
+    let html  = `<div>
+          
+            <div class="box"> 
+            <img style="vertical-align:middle" src="https://picsum.photos/200" />
+            <div>
+            <h1 style="margin-left: 20px;"> ${data.article.title}</h1>
+            <h2 style="font-size : 20px; margin-left: 20px;"><span style="color:tomato;">Author : </span>${data.user.username}</h2>
+            <h3 style="font-size : 20px; margin-left: 20px;"><span style="color:tomato;">Published in : </span>${data.article.UpdatedAt}</h3>
+            </div>
+            </div>
+            <br><br>
+            <p style="font-size : 20px; border-left: 5px solid tomato; padding-left:20px;">${data.article.content}</p>
+
+        </div>
+        </br></br>
+          
+        </div>
+        </br></br>
+        <div><h3>Comments : </h3>
+        <ul style="font-size : 18px; list-style-type:square; ">`;
+
+        data.comments.forEach(comment => {
+        let htmlSegment = `<li><h4 style="font-size : 18px;">comment ${cmt++}: </h4>
+                            <p>${comment.content}</p>
+                            </li>`;
+        html += htmlSegment;
+    });
+    html += `</ul></div></div>`;
+
+
+    let container = document.querySelector('.container2');
+    container.innerHTML = html;
+}
+
+renderArticle();
+</script>

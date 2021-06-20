@@ -2,6 +2,7 @@ const router = require("express").Router();
 const articlesRepo = require("../repositories/articles");
 const commentsRepo = require('../repositories/comments');
 const usersRepo = require('../repositories/users');
+const tagsRepo = require('../repositories/tags');
 
 /* GET articles listing. */
 router.get("/", async function (req, res, next) {

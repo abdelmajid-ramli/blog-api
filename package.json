@@ -17,5 +17,17 @@
   "devDependencies": {
     "faker": "^5.5.3",
     "nodemon": "^2.0.7"
-  }
+  },
+  "main": "20210602205850-users-create.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abdelmajid-ramli/blog-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abdelmajid-ramli/blog-api/issues"
+  },
+  "homepage": "https://github.com/abdelmajid-ramli/blog-api#readme",
+  "description": ""
 }

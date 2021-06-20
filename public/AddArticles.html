@@ -1,0 +1,92 @@
+<html>
+
+<head>
+  <title>Blog API</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" />
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="height: 60px;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">RAMLI API</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item" style="margin-left: 20px;" >
+                <a class="nav_link" href="index.html">HOME</a>
+            </li>
+            <li class="nav-item" style="margin-left: 20px;"  >
+                <a class="nav_link" href="users.html">USERS</a>
+            </li>
+            <li class="nav-item" style="margin-left: 20px;" >
+                <a class="nav_link" href="AddArticles.html">ADD</a>
+            </li>
+            <li class="nav-item" style="margin-left: 20px;" >
+              <a class="nav_link" href="index4.html">ABOUT</a>
+            </li>
+          </ul>
+          <div id="login_home">
+                
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+      <p><br></p>
+
+      <div id="add_article">
+
+        <form  method="post" onsubmit="addArticle(event)">
+            <tr>
+              <td>Email:</td><br>
+              <br>
+              <td><input value="email@email.cc" id="email" type="email" class="form-control"></td>
+            </tr>
+            <tr>
+                <br>
+              <td>Password:</td><br>
+              <br>
+              <td><input value="password123" id="password" type="password" class="form-control"></td>
+            </tr>
+            <tr>
+              <td>title:</td><br>
+              <br>
+              <td><input  id="title" type="text" class="form-control"></td>
+            </tr>
+            <tr>
+                <br>
+                <td>Article:</td><br>
+                <br>
+                <textarea class="form-control" id="content" rows="8"></textarea>
+            </tr>
+          </form>
+        </div>
+
+      </div>
+
+      <button onclick="addtest()">add article</button>
+
+
+
+      
+
+
+
+
+
+  </div>
+</body>
+
+<!-- No need for jQuery in bootstrap v5 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js"></script>
+<script src="./javascripts/home2.js"></script>
+<script src="./javascripts/auth.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</html>

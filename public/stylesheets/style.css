@@ -6,3 +6,22 @@ body {
 a {
   color: #00B7FF;
 }
+
+.article_form {
+  width: 600px;
+  background-color: black;
+}
+
+.container2{
+  background-color: black;
+}
+
+.nav_link{
+  color:white; 
+  text-decoration: none;
+}
+
+.nav_link:hover{
+  color:tomato; 
+  text-decoration: none;
+}

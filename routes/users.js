@@ -12,6 +12,12 @@ router.get("/", async function (req, res, next) {
   if (req.query.role === "guest") {
     res.send(await usersRepo.getGuests());
   }
+  if (req.query.name) {
+    console.log("username");
+    console.log(req.query.name);
+    res.send(await usersRepo.getUserByName(req.query.name));
+    console.log("username2");
+  }
   if (req.query.offset || req.query.limit) {
     let offset = Number(req.query.offset);
     let limit = Number(req.query.limit);
